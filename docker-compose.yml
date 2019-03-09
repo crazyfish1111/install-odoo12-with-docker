@@ -1,11 +1,13 @@
 version: '2'
 services:
   db:
-    image: postgres:9.5
+    image: postgres:10.7
     environment:
       - POSTGRES_PASSWORD=odoo
       - POSTGRES_USER=odoo
       - POSTGRES_DB=postgres
+    ports:
+      - "8072:5432"
     restart: always             # run as a service
 
   odoo12:
